@@ -1,0 +1,25 @@
+<!-- frontend/templates/sections.html -->
+{% extends "base.html" %}
+
+{% block title %}Seções - {{ notebook.name }}{% endblock %}
+
+{% block sidebar %}
+<h2>{{ notebook.name }}</h2>
+<ul>
+  {% for section in sections %}
+  <li>
+    <a href="{{ url_for('pages_bp.list_pages', section_id=section.id) }}">
+      {{ section.name }}
+    </a>
+  </li>
+  {% endfor %}
+</ul>
+<form action="{{ url_for('sections_bp.create_section', notebook_id=notebook.id) }}" method="post">
+  <input type="text" name="name" placeholder="Nova Seção" required>
+  <button type="submit">Criar</button>
+</form>
+{% endblock %}
+
+{% block content %}
+<h2>Selecione uma seção para ver as páginas</h2>
+{% endblock %}

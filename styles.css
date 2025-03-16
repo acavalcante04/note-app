@@ -1,0 +1,26 @@
+/* frontend/static/css/styles.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    background-color: #0078D7;
+    padding: 10px;
+    color: #fff;
+}
+
+.sidebar {
+    float: left;
+    width: 20%;
+    background-color: #f4f4f4;
+    padding: 10px;
+    box-sizing: border-box;
+    height: 100vh;
+}
+
+.content {
+    margin-left: 22%;
+    padding: 10px;
+}

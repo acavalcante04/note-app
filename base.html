@@ -1,0 +1,28 @@
+<!-- frontend/templates/base.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{% block title %}My Notes{% endblock %}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+  <nav>
+    <h1>My Notes</h1>
+  </nav>
+  
+  <div class="sidebar">
+    {% block sidebar %}
+    <!-- Conteúdo da sidebar -->
+    {% endblock %}
+  </div>
+  
+  <div class="content">
+    {% block content %}
+    <!-- Conteúdo principal -->
+    {% endblock %}
+  </div>
+  
+  <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

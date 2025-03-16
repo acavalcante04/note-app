@@ -1,0 +1,26 @@
+<!-- frontend/templates/notebooks.html -->
+{% extends "base.html" %}
+
+{% block title %}Notebooks{% endblock %}
+
+{% block sidebar %}
+<h2>Notebooks</h2>
+<ul>
+  {% for notebook in notebooks %}
+  <li>
+    <a href="{{ url_for('sections_bp.list_sections', notebook_id=notebook.id) }}">
+      {{ notebook.name }}
+    </a>
+  </li>
+  {% endfor %}
+</ul>
+<form action="{{ url_for('notebooks_bp.create_notebook') }}" method="post">
+  <input type="text" name="name" placeholder="Novo Notebook" required>
+  <button type="submit">Criar</button>
+</form>
+{% endblock %}
+
+{% block content %}
+<h2>Bem-vindo ao My Notes!</h2>
+<p>Selecione um notebook na barra lateral para começar.</p>
+{% endblock %}

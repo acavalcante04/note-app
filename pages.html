@@ -1,0 +1,23 @@
+<!-- frontend/templates/pages.html -->
+{% extends "base.html" %}
+
+{% block title %}Páginas - {{ section.name }}{% endblock %}
+
+{% block sidebar %}
+<h2>{{ section.name }}</h2>
+<ul>
+  {% for page in pages %}
+  <li><a href="#">{{ page.title }}</a></li>
+  {% endfor %}
+</ul>
+<form action="{{ url_for('pages_bp.create_page', section_id=section.id) }}" method="post">
+  <input type="text" name="title" placeholder="Novo Título" required>
+  <textarea name="content" placeholder="Conteúdo"></textarea>
+  <button type="submit">Criar Página</button>
+</form>
+{% endblock %}
+
+{% block content %}
+<h2>Conteúdo da Página</h2>
+<p>Selecione uma página da lista para ver seu conteúdo.</p>
+{% endblock %}
